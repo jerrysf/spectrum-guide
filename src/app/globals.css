@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+:root {
+  --background: #faf9f6;
+  --foreground: #263c38;
+  --primary: #2d756b;
+  --primary-foreground: #faf9f6;
+  --primary-soft: #e3f0ed;
+  --secondary: #ece5d8;
+  --secondary-foreground: #4a4a42;
+  --muted: #f1efe9;
+  --muted-foreground: #5c6b68;
+  --accent-blue: #e3ecf4;
+  --accent-purple: #ece7f2;
+  --accent-amber: #f5ecdc;
+  --card: #ffffff;
+  --border: #e4e0d6;
+  --destructive: #a3443c;
+  --radius: 0.625rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-purple: var(--accent-purple);
+  --color-accent-amber: var(--accent-amber);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 4px);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
+    "Noto Sans SC",
+    sans-serif;
+  line-height: 1.7;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* 文章正文排版 */
+.prose-sg {
+  max-width: 46rem;
+  font-size: 1.0625rem;
+}
+
+.prose-sg h2 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+  scroll-margin-top: 6rem;
+}
+
+.prose-sg h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  scroll-margin-top: 6rem;
+}
+
+.prose-sg p {
+  margin: 0.875rem 0;
+}
+
+.prose-sg ul,
+.prose-sg ol {
+  margin: 0.875rem 0;
+  padding-left: 1.5rem;
+}
+
+.prose-sg ul {
+  list-style: disc;
+}
+
+.prose-sg ol {
+  list-style: decimal;
+}
+
+.prose-sg li {
+  margin: 0.375rem 0;
+}
+
+.prose-sg a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.prose-sg blockquote {
+  border-left: 3px solid var(--primary);
+  padding-left: 1rem;
+  color: var(--muted-foreground);
+  margin: 1rem 0;
+}
+
+.prose-sg table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.9375rem;
+}
+
+.prose-sg th,
+.prose-sg td {
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+.prose-sg th {
+  background: var(--muted);
+}
+
+/* 打印样式 */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .print-page {
+    padding: 0 !important;
+  }
+}
